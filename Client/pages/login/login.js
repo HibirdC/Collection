@@ -11,6 +11,9 @@ Page({
 
   onLoad: function() {
       //需要load默认数据
+    var CuserInfo = wx.getStorageSync('CuserInfo');
+    if (CuserInfo.token) {
+    }
   },
 
   bindUserNameInput: function(e) {
@@ -36,13 +39,15 @@ Page({
     var mobile = that.data.mobile;
     var companyId = that.data.companyId;
 
-    //初始化error
-    that.setData({ error: "" });
     if (userName === "") return;
     if (mobile === "") return;
     if (companyId === "") return;
 
     that.setData({ loading: true });
+    //初始化error
+    that.setData({ error: "" });
+    that.setData({ companyName: "" });
+    that.setData({ companyAddr: "" });
 
     api.post('bindUser', {
       code: 2000,
@@ -56,35 +61,27 @@ Page({
             userName: userName,
             mobile: mobile,
             token: res.data.token,
-            companyAddr: res.data.address,
-            companyName: res.data.comName
+            companyAddr: res.data.companyAddr,
+            companyName: res.data.companyName
           };
           console.log(CuserInfo)
           wx.setStorageSync('CuserInfo', CuserInfo);
 
+          that.setData({ loading: false });
           that.setData({ companyName: CuserInfo.companyName });
           that.setData({ companyAddr: CuserInfo.companyAddr });
 
-          setTimeout(function () {
-            that.setData({ loading: false });
-            wx.navigateTo({
-              url: '/pages/index/index'
-            })
-            wx.navigateBack();
-          }, 3000);
         }else{
           that.setData({ error: res.code + ":" + res.message});
           that.setData({ loading: false });
         }
       }else{
-        that.setData({ error: err.errMsg });
         that.setData({ loading: false });
+        that.setData({ error: err.errMsg });
         setTimeout(function(){
           that.setData({ error: "" });
         },2000);
       }
     })
-
-
   }
 })

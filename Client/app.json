@@ -1,7 +1,5 @@
 {
   "pages":[
-    "pages/topics/topics",
-    "pages/detail/detail",
     "pages/login/login",
     "pages/index/index",
     "pages/logs/logs"
@@ -20,15 +18,10 @@
     "backgroundColor":"#fff",
     "borderStyle":"white",
     "list":[{
-      "pagePath":"pages/topics/topics",
+      "pagePath":"pages/index/index",
       "text":"首页",
       "iconPath":"images/bar/CNode.png",
       "selectedIconPath":"images/bar/CNodeHL.png"
-    },{
-      "pagePath":"pages/index/index",
-      "text":"报表",
-      "iconPath":"images/bar/ME.png",
-      "selectedIconPath":"images/bar/MEHL.png"
     },
     {
       "pagePath": "pages/login/login",

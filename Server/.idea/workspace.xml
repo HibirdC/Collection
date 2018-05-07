@@ -26,8 +26,8 @@
       <file leaf-file-name="server.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1360">
-              <caret line="180" column="38" lean-forward="true" selection-start-line="180" selection-start-column="38" selection-end-line="180" selection-end-column="38" />
+            <state relative-caret-position="276">
+              <caret line="169" column="41" lean-forward="true" selection-start-line="169" selection-start-column="41" selection-end-line="169" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -35,8 +35,8 @@
       <file leaf-file-name="WXBizDataCrypt.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WXBizDataCrypt.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-152">
-              <caret line="7" column="69" lean-forward="true" selection-start-line="7" selection-start-column="69" selection-end-line="7" selection-end-column="69" />
+            <state relative-caret-position="133">
+              <caret line="7" column="69" selection-start-line="7" selection-start-column="69" selection-end-line="7" selection-end-column="69" />
             </state>
           </provider>
         </entry>
@@ -78,6 +78,8 @@
       <find>collection</find>
       <find>findAndModify</find>
       <find>saveAuth</find>
+      <find>checkAuth</find>
+      <find>companyAddress</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -122,8 +124,8 @@
         <subPane>
           <expand>
             <path>
-              <item name="helloword" type="b2602c69:ProjectViewProjectNode" />
-              <item name="helloword" type="462c0819:PsiDirectoryNode" />
+              <item name="Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Server" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -135,8 +137,8 @@
     <property name="SearchEverywhereHistoryKey" value="mongo&#9;ACTION&#9;ActivateMongoExplorerToolWindow&#10;setting&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="4.4.3" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../node.exe" />
-    <property name="nodejs_interpreter_path" value="$PROJECT_DIR$/../node" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.mongoOptions" />
@@ -181,33 +183,33 @@
       <workItem from="1525252450625" duration="55539000" />
       <workItem from="1525313887353" duration="5267000" />
       <workItem from="1525322801870" duration="21262000" />
+      <workItem from="1525665106745" duration="4655000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82068000" />
+    <option name="totallyTimeSpent" value="86723000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.06625" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.065625" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.328084" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Mongo Explorer" order="3" visible="true" weight="0.284375" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.40288714" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.22178477" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
     </layout>
@@ -220,10 +222,52 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="14" />
+      <option name="time" value="20" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="27" column="3" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WXBizDataCrypt.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="69" lean-forward="true" selection-start-line="7" selection-start-column="69" selection-end-line="7" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/express/lib/application.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2090">
+          <caret line="110" column="2" selection-start-line="110" selection-start-column="2" selection-end-line="110" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3420">
+          <caret line="180" column="38" lean-forward="true" selection-start-line="180" selection-start-column="38" selection-end-line="180" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="513">
@@ -338,15 +382,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WXBizDataCrypt.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-152">
-          <caret line="7" column="69" lean-forward="true" selection-start-line="7" selection-start-column="69" selection-end-line="7" selection-end-column="69" />
+        <state relative-caret-position="133">
+          <caret line="7" column="69" selection-start-line="7" selection-start-column="69" selection-end-line="7" selection-end-column="69" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1360">
-          <caret line="180" column="38" lean-forward="true" selection-start-line="180" selection-start-column="38" selection-end-line="180" selection-end-column="38" />
+        <state relative-caret-position="276">
+          <caret line="169" column="41" lean-forward="true" selection-start-line="169" selection-start-column="41" selection-end-line="169" selection-end-column="41" />
         </state>
       </provider>
     </entry>

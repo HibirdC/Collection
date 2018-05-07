@@ -17,7 +17,7 @@ Page({
     console.log('onLoad')
     var that = this;
     var CuserInfo = wx.getStorageSync('CuserInfo');
-    if (CuserInfo.accesstoken){
+    if (CuserInfo.token){
       that.setData({ islogin:true });
     }
     console.log(CuserInfo)

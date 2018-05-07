@@ -84,7 +84,7 @@ const decrypt = (sessionKey, encryptedData, iv, callback) => {
 const saveAuth = (mobile, callback) => {
 	const token = uuid.v1()	;
 	RedisClient.set('NYLZAPP_AUTH:'+token, mobile, (err, ret) => {
-		console.log(err, ret);
+		console.log("saveAuth:", ret);
 		callback(err, token)
 	})
 };
@@ -134,29 +134,12 @@ Server.post('/bindUser', (req, res) => {
         });
         return
     }
-    //查找公司ID是否有效
-	company.findOne({license:data.companyId},function(err, comInfo){
-        if( err || !comInfo) {
-            res.send({
-                code: 1004,
-                message: '无效的企业编码'
-            });
-            return
-        }
-        else {
-        	//合法企业ID，绑定用户
-			const user = {
-                "userName":data.userName,
-                "mobile":data.mobile,
-                "license":data.companyId,
-                "created":new Date().getTime(),
-                "updated":new Date().getTime()
-			}
-            users.save(user, (err, ret) => {
-                if(err){
-                    console.log("write db failed, username:"+data.userName);
-                    return;
-                }
+    /*
+    检查用户是否绑定，如果已经绑定直接返回
+     */
+    users.findOne({mobile:data.mobile},function(err, userInfo) {
+			if(!err &&userInfo){
+                console.log("user have binded:",data.userName);
                 //保存认证
                 saveAuth(data.mobile, (err, ret) => {
                     console.log('token:', ret)
@@ -164,18 +147,54 @@ Server.post('/bindUser', (req, res) => {
                     res.send({
                         code: 0,
                         data: {
-                        	token:ret,
-                            comName: comInfo.comName,
-                            address: comInfo.address,
-                            tel: comInfo.tel,
-                            ext: comInfo.ext
+                            token:ret,
+                            companyName: userInfo.companyName,
+                            companyAddr: userInfo.companyAddr
                         }
                     })
-				});
-            });
-		}
-    });
-    console.log("I am here");
+                });
+				return;
+			}
+			//查找公司ID是否有效
+			company.findOne({license:data.companyId},function(err, comInfo){
+				if( err || !comInfo) {
+					res.send({
+						code: 1004,
+						message: '无效的企业编码'
+					});
+					return
+				}
+                //合法企业ID，绑定用户
+                const user = {
+                    "userName":data.userName,
+                    "mobile":data.mobile,
+                    "companyName":comInfo.companyName,
+                    "companyAddr":comInfo.companyAddr,
+                    "license":data.companyId,
+                    "created":new Date().getTime(),
+                    "updated":new Date().getTime()
+                }
+                users.save(user, (err, ret) => {
+                    if(err){
+                        console.log("write db failed, username:",data.userName);
+                        return;
+                    }
+                    //保存认证
+                    saveAuth(data.mobile, (err, ret) => {
+                        console.log('token:', ret)
+                        //结果返回给用户
+                        res.send({
+                            code: 0,
+                            data: {
+                                token:ret,
+                                companyName: comInfo.companyName,
+                                companyAddr: comInfo.companyAddr
+                            }
+                        })
+                    });
+                });
+			});
+    })
 });
 // 小程序登录
 Server.post('/signIn', (req, res) => {
