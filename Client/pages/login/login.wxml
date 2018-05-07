@@ -5,16 +5,16 @@
       <image class="login-item-img" mode="scaleToFill" src="/images/icon/logo.png"></image>
 
       <view class="login-item-section">
-        <input placeholder="请输入员工姓名" class="login-item-input" placeholder-style="color:#f5f5f5;" bindinput="bindUserNameInput" />
+        <input placeholder="请输入员工姓名" class="login-item-input" value="{{inputNameTxt}}" placeholder-style="color:#f5f5f5;" bindinput="bindUserNameInput" />
       </view>
       <view class="login-item-section">
-        <input placeholder="请输入手机号码" class="login-item-input" placeholder-style="color:#f5f5f5;"    bindinput="bindMobileInput" />
+        <input placeholder="请输入手机号码" class="login-item-input" value="{{inputMobileTxt}}" placeholder-style="color:#f5f5f5;"    bindinput="bindMobileInput" />
       </view>
       <view class="login-item-section">
-      <input placeholder="请输入所属企业ID" class="login-item-input" placeholder-style="color:#f5f5f5;"    bindinput="bindCompanyIdInput" />
+      <input placeholder="请输入所属企业ID" class="login-item-input" value="{{inputCompanyIdTxt}}" placeholder-style="color:#f5f5f5;"    bindinput="bindCompanyIdInput" />
       </view>
       <view class="login-item-button">
-        <button type="primary" size="default" plain="false" loading="{{loading}}" class="login-button" bindtap="isLogin"> 绑定用户 </button>
+        <button type="primary" size="default" plain="false" loading="{{loading}}" class="login-button" bindtap="isLogin"> {{buttonName}} </button>
       </view>
 
       <view class="error-msg" wx:if="{{error}}">{{error}}</view>

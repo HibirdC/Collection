@@ -8,7 +8,7 @@
     "backgroundTextStyle":"light",
     "backgroundColor":"#fff",
     "navigationBarBackgroundColor": "#444",
-    "navigationBarTitleText": "CNODE 社区",
+    "navigationBarTitleText": "Collection 社区",
     "navigationBarTextStyle":"white",
     "enablePullDownRefresh":true
   },

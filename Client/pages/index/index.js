@@ -16,12 +16,6 @@ Page({
   onLoad: function () {
     console.log('onLoad')
     var that = this;
-    var CuserInfo = wx.getStorageSync('CuserInfo');
-    if (CuserInfo.token){
-      that.setData({ islogin:true });
-    }
-    console.log(CuserInfo)
-
     //调用应用实例的方法获取全局数据
     app.getUserInfo(function(userInfo){
       //更新数据
@@ -29,5 +23,15 @@ Page({
         userInfo:userInfo
       })
     })
+  },
+  onShow: function () {
+    var that = this;
+    var CuserInfo = wx.getStorageSync('CuserInfo');
+    if (CuserInfo.token) {
+      that.setData({ islogin: true });
+    }else{
+      that.setData({ islogin: false });
+    }
+    console.log(CuserInfo);
   }
 })
