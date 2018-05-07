@@ -1,0 +1,24 @@
+demo:https://blog.csdn.net/samt007/article/details/54616421
+redis: https://wenku.baidu.com/view/4591de2f3069a45177232f60ddccda38376be182.html
+
+mongo: 
+	下载 http://www.runoob.com/mongodb/mongodb-window-install.html
+	nodejs操作mongodb数据库（mongodb）https://blog.csdn.net/zxc123e/article/details/53334803
+       Node.js和MongoDB - MongoJS入门 https://www.cnblogs.com/niuox/p/3576127.html
+       sql                 https://blog.csdn.net/qq_27093465/article/details/51700435
+
+
+	
+webstorm:
+
+       mongo :https://www.zhihu.com/question/31903748
+	      https://blog.csdn.net/u010142437/article/details/79219196
+       https://blog.csdn.net/kongjiea/article/details/48262851
+激活：https://blog.csdn.net/it_talk/article/details/52448597
+
+
+NODEJD：
+https://www.2cto.com/kf/201703/616681.html
+webstorm 与nodeJS https://www.cnblogs.com/stone_w/p/4315321.html
+                  https://blog.csdn.net/pengpegv5yaya/article/details/51885829
+		  https://blog.csdn.net/XXXXX_T/article/details/79490796
