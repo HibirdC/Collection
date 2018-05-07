@@ -17,6 +17,7 @@ Page({
   onLoad: function() {
     var CuserInfo = wx.getStorageSync('CuserInfo');
     if (CuserInfo.token) {
+      this.setData({ loginStatus: true });
       this.setData({ userName: CuserInfo.userName });
       this.setData({ mobile: CuserInfo.mobile });
       this.setData({ companyId: CuserInfo.companyId });
@@ -94,7 +95,13 @@ Page({
           that.setData({ loginStatus: true });
           that.setData({ companyName: CuserInfo.companyName });
           that.setData({ companyAddr: CuserInfo.companyAddr });
-
+          this.setData({ buttonName: "解绑账号" });
+          //跳转到index
+          setTimeout(function () {
+            wx.navigateTo({
+              url: '../index/index'
+            })
+          }, 2000);
         }else{
           that.setData({ error: res.code + ":" + res.message});
           that.setData({ loading: false });
