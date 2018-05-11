@@ -1,0 +1,48 @@
+/**index.wxss**/
+.input-container {
+   padding: 0 100rpx;
+   font-family: "微软雅黑"
+}
+.item {
+  border-bottom: 1px solid #e2e2e2;
+  height:56rpx;
+  line-height: 56rpx;
+  font-size:28rpx;
+  padding: 20rpx 0rpx;
+  color: #909090;
+}
+
+.item .label{
+  width: 30%;
+  float: left;
+  vertical-align: right;
+}
+
+.item input{
+  margin-left: 30%;
+  margin-right: 10%;
+  height:40rpx;
+  border: 0rpx solid #d9d9d9;
+  border-radius: 6rpx;
+  text-align: center;
+  padding-right: 8rpx;
+  color:#22afcc;
+}
+
+.item .unit{
+  float: right;
+}
+
+.item .type_select{
+  float: center;
+}
+
+.item .type_select text{
+  margin-left: 8rpx;
+}
+
+.calcu_btn {
+  background-color: #22afcc;
+  color: #fff;
+  margin-top: 80rpx;
+}

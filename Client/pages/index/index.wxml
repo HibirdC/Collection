@@ -10,51 +10,94 @@
 </view> -->
 
 <view class="page me">
+<navigator url="/pages/login/login" wx:if="{{islogin == false}}">
+    <view class="userinfo">
+      <image class="userinfo-avatar" src="/images/icon/avatar.png" background-size="cover"></image>
+      <text class="userinfo-nickname">点击登录</text>
+      <view class="usermotto">
+        <text class="user-motto"></text>
+      </view>
+    </view>
+</navigator>
+
+<navigator url="/pages/login/login" wx:if="{{islogin == true}}">
     <view class="userinfo">
       <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-      <!-- <view class="usermotto">
-        <text class="user-motto">{{motto}}</text>
-      </view> -->
+      <text class="userinfo-nickname">{{myName}}</text>
+      <view class="usermotto">
+        <text class="user-motto">{{myCompany}}</text>
+      </view>
     </view>
+</navigator>
 
-    <navigator url="/pages/login/login" wx:if="{{islogin == false}}">
       <view class="view-cell view-cell-line">
         <view class="view-cell-primary">
           <image class="view-img"   mode="scaleToFill" src="/images/icon/login.png" />
-          <text class="view-name">登录conde</text>
+          <text class="view-name">登录 Collection</text>
         </view>
         <view class="view-cell-arrow"></view>
       </view>
-    </navigator>
-
-    <view class="view-cell view-cell-line"  wx:if="{{islogin == true}}">
+      
+    <view class="view-cell view-cell-line">
       <view class="view-cell-primary">
         <image class="view-img"   mode="scaleToFill" src="/images/icon/login.png" />
-        <text class="view-name">已登录conde</text>
+        <text class="view-name">已登录 Collection</text>
       </view>
+      <view class="view-cell-arrow"></view>
     </view>
 
-    <view class="about">
-        <view class="about-item">
-          <text class="about-item-title">关于项目</text>
-          <text class="about-item-content">使用cnode社区api做微信小应用（实现了数据的读取、展示，滑到底部加载下一页，loading加载）</text>
+    <view class="welcome-item">
+        <view class="welcome-item">
+          <text class="data-item-title">当日数据：</text>
         </view>
-        <view class="about-item">
-          <text class="about-item-title">源码地址</text>
-          <text class="about-item-content link">https://github.com/vincentSea</text>
+        <view class="table">
+          <view class="tr bg-w">
+            <view class="th">    </view>
+            <view class="th">可回收物</view>
+            <view class="th">厨余垃圾</view>
+            <view class="th">有害垃圾</view>
+            <view class="th">其他垃圾</view>
+          </view>
+          <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+            <view class="td">数量</view>
+            <view class="td">{{todayData.recoverable}}</view>
+            <view class="td">{{todayData.harmful}}</view>
+            <view class="td">{{todayData.unrecoverable}}</view>
+            <view class="td">{{todayData.others}}</view>
+          </view>
+          <view class="tr" wx:else>
+            <view class="td">数量</view> 
+            <view class="td">{{todayData.recoverable}}</view>
+            <view class="td">{{todayData.harmful}}</view>
+            <view class="td">{{todayData.unrecoverable}}</view>
+            <view class="td">{{todayData.others}}</view>
+          </view>
         </view>
-        <view class="about-item">
-          <text class="about-item-title">My GitHub</text>
-          <text class="about-item-content link">https://github.com/vincentSea</text>
+        <view class="welcome-item">
+          <text class="data-item-title">当月数据：</text>
         </view>
-        <view class="about-item">
-          <text class="about-item-title">参考资料</text>
-          <text class="about-item-content link">https://github.com/coolfishstudio/wechat-webapp-cnode</text>
-        </view>
-        <view class="about-item">
-          <text class="about-item-title">当前版本</text>
-          <text class="about-item-content ">V1.0.0 Beta</text>
+        <view class="table">
+          <view class="tr bg-w">
+            <view class="th">    </view>
+            <view class="th">可回收物</view>
+            <view class="th">厨余垃圾</view>
+            <view class="th">有害垃圾</view>
+            <view class="th">其他垃圾</view>
+          </view>
+          <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+            <view class="td">数量</view>
+            <view class="td">{{todayData.recoverable}}</view>
+            <view class="td">{{todayData.harmful}}</view>
+            <view class="td">{{todayData.unrecoverable}}</view>
+            <view class="td">{{todayData.others}}</view>
+          </view>
+          <view class="tr" wx:else>
+            <view class="td">数量</view> 
+            <view class="td">{{todayData.recoverable}}</view>
+            <view class="td">{{todayData.harmful}}</view>
+            <view class="td">{{todayData.unrecoverable}}</view>
+            <view class="td">{{todayData.others}}</view>
+          </view>
         </view>
     </view>
 </view>

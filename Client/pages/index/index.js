@@ -3,9 +3,12 @@
 var app = getApp()
 Page({
   data: {
-    motto: 'Hello ! WelCome to WxApp',
+    motto: 'Hello ! WelCome to Collection',
     islogin: false,
-    userInfo: {}
+    userInfo: {},
+    myName:'未登录',
+    myCompany:'',
+    todayData:{}
   },
   //事件处理函数
   bindViewTap: function() {
@@ -28,10 +31,14 @@ Page({
     var that = this;
     var CuserInfo = wx.getStorageSync('CuserInfo');
     if (CuserInfo.token) {
+      that.setData({ myName: CuserInfo.userName });
+      that.setData({ myCompany: CuserInfo.companyName });
       that.setData({ islogin: true });
     }else{
       that.setData({ islogin: false });
+      that.setData({ baseInfoText: '' });
     }
+
     console.log(CuserInfo);
   }
 })

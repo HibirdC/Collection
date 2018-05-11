@@ -98,8 +98,8 @@ Page({
           this.setData({ buttonName: "解绑账号" });
           //跳转到index
           setTimeout(function () {
-            wx.navigateTo({
-              url: '../index/index'
+            wx.navigateBack({
+              delta: 1
             })
           }, 2000);
         }else{

@@ -1,0 +1,28 @@
+
+<!--index.wxml-->
+<view class="container">
+  <view class="input-container">
+  <view class="item">
+    <text class="label">垃圾类型:</text>
+      <picker mode="selector" value="{{index}}" range="{{dataType}}" bindchange="bindPickerChange" class="type_select">
+        <view class="picker">
+          {{dataType[index]}}
+        </view>
+      </picker>
+  </view>
+    <view class="item">
+      <text class="label">回收地点:</text>
+      <picker mode="selector" value="{{index}}" range="{{dataType}}" bindchange="bindPickerChange" class="type_select">
+        <view class="picker">
+          {{dataType[index]}}
+        </view>
+      </picker>
+    </view>
+    <view class="item">
+      <text class="label">回收重量:</text>
+      <text class="unit">kg</text>
+      <input type="digit" bindinput="bindKeyWeightInput" maxlength="6" class="" />
+    </view>
+    <button class="calcu_btn" bindtap="calculateBtn">提交数据</button>
+  </view>
+</view>
