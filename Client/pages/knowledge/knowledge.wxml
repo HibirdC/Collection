@@ -1,0 +1,2 @@
+<!--pages/knowledge/knowledge.wxml-->
+<web-view src="http://www.chinaeol.net/Science/index.html"></web-view>

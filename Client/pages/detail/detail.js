@@ -6,9 +6,10 @@ Page({
   data: {
     showModalStatus: false,  //先设置隐藏
     imgUrls: [
-      { id: 1, img: "../../images/1.png"},
-      { id: 2, img: "../../images/3.png"},
-      { id: 3, img: "../../images/4.png"},
+      { id: 1, img: "../../images/image/1.png"},
+      { id: 2, img: "../../images/image/2.png" },
+      { id: 3, img: "../../images/image/3.png"},
+      { id: 4, img: "../../images/image/4.png"},
     ],
     indicatorDots: true,
     autoplay: true,
@@ -17,17 +18,18 @@ Page({
     circular: true,
     retData: [],
     showModal: false,
-    xlh: 0,
-    pwd: '',
-    cplid: '',
-    ppileid: 0,
-    is_qing: 1,
-    is_shou: '',
+    isLogin:false
   },
   showDialogBtn: function () {
-    wx.navigateTo({
-      url: '../collection/collection',
-    })
+    if(this.data.isLogin){
+      wx.navigateTo({
+        url: '../collection/collection',
+      })
+    }else{
+      wx.navigateTo({
+        url: '../login/login?type='+"Collection",
+      })
+    }
   },
 
   powerDrawer: function (e) {
@@ -103,6 +105,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
+    var CuserInfo = wx.getStorageSync('CuserInfo');
+    if (CuserInfo.token) {
+      that.setData({ islogin: true });
+    }
   }
 })

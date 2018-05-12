@@ -6,7 +6,11 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/recycable/recycable",
-    "pages/collection/collection"
+    "pages/collection/collection",
+    "pages/knowledge/knowledge",
+    "pages/statistical/statistical",
+    "pages/setting/setting",
+    "pages/about/about"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -25,6 +29,12 @@
         "text": "首页",
         "iconPath": "images/bar/home.png",
         "selectedIconPath": "images/bar/home_active.png"
+      },
+      {
+        "pagePath": "pages/knowledge/knowledge",
+        "text": "环保",
+        "iconPath": "images/bar/read.png",
+        "selectedIconPath": "images/bar/read_active.png"
       },
       {
         "pagePath": "pages/index/index",

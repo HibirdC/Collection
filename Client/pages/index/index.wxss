@@ -27,6 +27,8 @@
 }
 
 .usermotto{
+  color: #BEBEBE;
+  font-size: 20rpx;
   margin-top: 10rpx;
 }
 

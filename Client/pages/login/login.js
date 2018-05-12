@@ -11,10 +11,18 @@ Page({
     buttonName:"绑定账号",
     inputNameTxt:"",
     inputMobileTxt: "",
-    inputCompanyIdTxt: ""
+    inputCompanyIdTxt: "",
+    typeName:""
   },
+  gotoNextPage: function (type) {
 
-  onLoad: function() {
+    //切换到toolbar
+    wx.switchTab({
+      url: '../../pages/userCenter/userCenter'
+    })
+  },
+  onLoad: function (option) {
+    this.setData({typeName: option.type});
     var CuserInfo = wx.getStorageSync('CuserInfo');
     if (CuserInfo.token) {
       this.setData({ loginStatus: true });
@@ -96,11 +104,9 @@ Page({
           that.setData({ companyName: CuserInfo.companyName });
           that.setData({ companyAddr: CuserInfo.companyAddr });
           this.setData({ buttonName: "解绑账号" });
-          //跳转到index
+          //记录从哪里来到登陆页，登陆成功后跳转到哪里
           setTimeout(function () {
-            wx.navigateBack({
-              delta: 1
-            })
+            gotoNextPage(this.data.typeName)
           }, 2000);
         }else{
           that.setData({ error: res.code + ":" + res.message});

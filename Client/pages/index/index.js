@@ -3,7 +3,6 @@
 var app = getApp()
 Page({
   data: {
-    motto: 'Hello ! WelCome to Collection',
     islogin: false,
     userInfo: {},
     myName:'未登录',
@@ -40,5 +39,12 @@ Page({
     }
 
     console.log(CuserInfo);
-  }
+  },
+  goUserInfo(e) {
+    if (!this.data.islogin){
+      wx.navigateTo({
+        url: '../login/login?type=' + e.currentTarget.dataset.type
+      })
+    }
+  },
 })
